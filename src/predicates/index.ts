@@ -1,4 +1,3 @@
-export * from './array.js';
 export * from './nil.js';
 export * from './null.js';
 export * from './number.js';
