@@ -14,6 +14,6 @@ export function isUndefined<T>(value: T | undefined): value is undefined {
  * @param value - The value to check.
  * @returns True if the value is not undefined, false otherwise.
  */
-export function isDefined<T>(value: T | undefined): value is T {
+export function isNotUndefined<T>(value: T | undefined): value is T {
   return value !== undefined;
 }

@@ -1,11 +1,17 @@
 /**
- * Checks if a value is a record: a non-null object that is not an array.
+ * Checks if a value is a plain object, e.g. an object literal or `Object.create(null)`.
+ * Arrays, class instances and built-ins such as `Date` or `Map` are not records.
  *
  * @param value - The value to check.
  * @returns True if the value is a record, false otherwise.
  */
 export function isRecord(value: unknown): value is Record<PropertyKey, unknown> {
-  return typeof value === 'object' && value !== null && !Array.isArray(value);
+  if (typeof value !== 'object' || value === null) {
+    return false;
+  }
+
+  const prototype: unknown = Object.getPrototypeOf(value);
+  return prototype === Object.prototype || prototype === null;
 }
 
 /**

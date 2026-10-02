@@ -1,13 +1,15 @@
-export function once<T extends (...args: never[]) => ReturnType<T>>(fn: T): T {
-  let called = false;
-  let result: ReturnType<T>;
+export function once<This, Args extends unknown[], R>(
+  fn: (this: This, ...args: Args) => R
+): (this: This, ...args: Args) => R {
+  let pending: ((this: This, ...args: Args) => R) | undefined = fn;
+  let result: R;
 
-  return ((...args: Parameters<T>) => {
-    if (!called) {
-      result = fn(...args);
-      called = true;
+  return function (this: This, ...args: Args): R {
+    if (pending) {
+      result = pending.apply(this, args);
+      pending = undefined;
     }
 
     return result;
-  }) as T;
+  };
 }
