@@ -14,6 +14,6 @@ export function isString(value: unknown): value is string {
  * @param value - The value to check.
  * @returns True if the value is not a string, false otherwise.
  */
-export function isNotString(value: unknown): value is Exclude<unknown, string> {
+export function isNotString<T>(value: T): value is Exclude<T, string> {
   return typeof value !== 'string';
 }

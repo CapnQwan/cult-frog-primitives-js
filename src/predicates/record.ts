@@ -1,10 +1,10 @@
 /**
- * Checks if a value is a record.
+ * Checks if a value is a record: a non-null object that is not an array.
  *
  * @param value - The value to check.
  * @returns True if the value is a record, false otherwise.
  */
-export function isRecord<T extends object>(value: T): value is T {
+export function isRecord(value: unknown): value is Record<PropertyKey, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value);
 }
 
@@ -14,20 +14,20 @@ export function isRecord<T extends object>(value: T): value is T {
  * @param value - The value to check.
  * @returns True if the value is not a record, false otherwise.
  */
-export function isNotRecord<T extends object>(value: T): value is T {
+export function isNotRecord<T>(value: T): value is Exclude<T, Record<PropertyKey, unknown>> {
   return !isRecord(value);
 }
 
 /**
- * Checks if a value has a specific property.
+ * Checks if a value has a specific own property.
  *
  * @param value - The value to check.
  * @param key - The key to check.
- * @returns True if the record has a specific property, false otherwise.
+ * @returns True if the value has the own property, false otherwise.
  */
-export function hasProperty<T extends object, K extends keyof T>(
-  value: T,
+export function hasProperty<K extends PropertyKey>(
+  value: object,
   key: K
-): value is T & Record<K, T[K]> {
+): value is Record<K, unknown> {
   return Object.hasOwn(value, key);
 }

@@ -14,6 +14,6 @@ export function isNumber(value: unknown): value is number {
  * @param value - The value to check.
  * @returns True if the value is not a number, false otherwise.
  */
-export function isNotNumber(value: unknown): value is Exclude<unknown, number> {
+export function isNotNumber<T>(value: T): value is Exclude<T, number> {
   return typeof value !== 'number';
 }
