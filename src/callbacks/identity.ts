@@ -1,11 +1,20 @@
 /**
- * Returns the value itself.
- * Might seem pointless, but is intended for use in transform functions.
+ * Returns the value it is given, unchanged.
  *
- * @example `const result = arr.map(optionalCallback ?? identity)`
+ * Useful as a default transform or a pass-through callback, so callers don't need to branch on
+ * whether a transform was provided.
+ *
+ * @example
+ * ```ts
+ * function formatAll<T>(items: T[], format: (item: T) => T = identity): T[] {
+ *   return items.map(format);
+ * }
+ *
+ * formatAll([1, 2, 3]); // [1, 2, 3]
+ * ```
  *
  * @param value - The value to return.
- * @returns The value itself.
+ * @returns `value`, unchanged.
  */
 export function identity<T>(value: T): T {
   return value;

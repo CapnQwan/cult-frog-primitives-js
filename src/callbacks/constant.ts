@@ -1,19 +1,21 @@
 /**
- * Returns a function that returns a constant value.
+ * Creates a function that always returns the given value.
  *
- * Intended only for use in certain APIs where a callback is required, but you want it to return a constant value.
+ * Useful when an API expects a callback or factory but you already have the value, e.g. a
+ * default provider or a stubbed dependency in tests.
  *
- * @example `
- * function getValue<T>(provider: () => T): T {
- *   return provider();
- * }
+ * The same value is returned on every call; objects are not copied.
  *
- * getValue(() => 'hello'); // 'hello'
- * getValue(constant('hello')); // 'hello'
- * `
+ * @example
+ * ```ts
+ * const getDefaultName = constant('anonymous');
+ * getDefaultName(); // 'anonymous'
  *
- * @param value - The value to return.
- * @returns A function that returns the constant value.
+ * const names = users.map((user) => user.name ?? getDefaultName());
+ * ```
+ *
+ * @param value - The value the returned function should produce.
+ * @returns A function that returns `value` every time it is called.
  */
 export function constant<T>(value: T): () => T {
   return () => value;

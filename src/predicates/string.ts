@@ -1,8 +1,15 @@
 /**
- * Checks if a value is a string.
+ * Checks if a value is a string primitive. `String` wrapper objects are rejected.
+ *
+ * @example
+ * ```ts
+ * isString('hello'); // true
+ * isString(''); // true
+ * isString(42); // false
+ * ```
  *
  * @param value - The value to check.
- * @returns True if the value is a string, false otherwise.
+ * @returns `true` if `value` is a string, otherwise `false`.
  */
 export function isString(value: unknown): value is string {
   return typeof value === 'string';
