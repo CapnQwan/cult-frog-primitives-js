@@ -1,6 +1,6 @@
 {
   "name": "@cult-frog/primitives",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Small, dependency-free TypeScript type guards and callback helpers",
   "license": "MIT",
   "author": "Quin Partridge",
