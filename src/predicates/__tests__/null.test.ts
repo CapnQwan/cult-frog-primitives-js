@@ -1,6 +1,6 @@
 import { describe, expect, expectTypeOf, it } from 'vitest';
 
-import { isNotNull, isNull } from './null.js';
+import { isNotNull, isNull } from '../null.js';
 
 const nonNullValues = [undefined, 0, '', false, {}, 'text'];
 

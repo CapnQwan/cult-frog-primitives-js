@@ -1,6 +1,6 @@
 import { describe, expect, expectTypeOf, it } from 'vitest';
 
-import { constant } from './constant.js';
+import { constant } from '../constant.js';
 
 describe('constant', () => {
   it('returns a function that returns the given value', () => {

@@ -1,6 +1,6 @@
 import { describe, expect, expectTypeOf, it } from 'vitest';
 
-import { isNumber } from './number.js';
+import { isNumber } from '../number.js';
 
 describe('isNumber', () => {
   it.each([0, -0, 1, -1, 1.5, Number.MAX_SAFE_INTEGER, Number.MIN_VALUE])(

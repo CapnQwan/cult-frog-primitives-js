@@ -1,6 +1,6 @@
 import { describe, expect, expectTypeOf, it } from 'vitest';
 
-import { isNil, isNotNil } from './nil.js';
+import { isNil, isNotNil } from '../nil.js';
 
 const nilValues = [null, undefined];
 const nonNilValues = [0, '', false, Number.NaN, [], {}, 'text', 1];

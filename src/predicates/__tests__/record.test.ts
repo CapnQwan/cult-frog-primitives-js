@@ -2,7 +2,7 @@
 import { runInNewContext } from 'node:vm';
 import { describe, expect, expectTypeOf, it } from 'vitest';
 
-import { hasProperty, isNotRecord, isRecord } from './record.js';
+import { hasProperty, isNotRecord, isRecord } from '../record.js';
 
 class Example {
   value = 1;

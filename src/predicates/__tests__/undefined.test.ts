@@ -1,6 +1,6 @@
 import { describe, expect, expectTypeOf, it } from 'vitest';
 
-import { isNotUndefined, isUndefined } from './undefined.js';
+import { isNotUndefined, isUndefined } from '../undefined.js';
 
 const definedValues = [null, 0, '', false, {}, 'text'];
 

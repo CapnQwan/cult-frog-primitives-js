@@ -1,6 +1,6 @@
 import { describe, expect, expectTypeOf, it } from 'vitest';
 
-import { isString } from './string.js';
+import { isString } from '../string.js';
 
 describe('isString', () => {
   it.each(['', 'text', `template`])('returns true for %j', (value) => {

@@ -1,6 +1,6 @@
 import { describe, expect, expectTypeOf, it } from 'vitest';
 
-import { identity } from './identity.js';
+import { identity } from '../identity.js';
 
 describe('identity', () => {
   it.each([1, 'text', true, null, undefined, 0, ''])('returns %s unchanged', (value) => {

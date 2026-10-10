@@ -1,6 +1,6 @@
 import { describe, expect, expectTypeOf, it } from 'vitest';
 
-import { noop } from './noop.js';
+import { noop } from '../noop.js';
 
 describe('noop', () => {
   it('returns undefined', () => {
