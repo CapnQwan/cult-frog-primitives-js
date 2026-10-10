@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-10-11
+
 ### Added
 
 - `CHANGELOG.md` is now included in the published package.
@@ -18,6 +20,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   The package `files` list now excludes `src/**/__tests__`, so test files stay out of the tarball.
 
 ## [0.1.1] - 2026-10-05
+
+Tagged but never published to npm. Its fix is included in 0.1.2.
 
 ### Fixed
 
@@ -46,6 +50,7 @@ Initial release.
 - Unit tests for every export.
 - `prepublishOnly` runs lint, type checking, tests and the build before publishing.
 
-[Unreleased]: https://github.com/CapnQwan/cult-frog-primitives-js/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/CapnQwan/cult-frog-primitives-js/compare/v0.1.2...HEAD
+[0.1.2]: https://github.com/CapnQwan/cult-frog-primitives-js/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/CapnQwan/cult-frog-primitives-js/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/CapnQwan/cult-frog-primitives-js/releases/tag/v0.1.0
